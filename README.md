@@ -1,2 +1,13 @@
-# Tercer parcial en github.
-These are my homework programs enjoy or not, idk.
+# Tercer parcial en github
+# Alumno: Tenorio Mendez Vidal Kijuro.
+Grupo: 3CV45.
+
+Contenido del repositorio: 
+
+Tarea 3-1:
+* Arbol-binario.c
+* Arbol-binario-equilibrado.c
+
+Tarea 3-2:
+* Grafo-dirigido.c
+* Biblioteca.h
