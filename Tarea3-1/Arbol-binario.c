@@ -1,20 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct TreeNode {
+struct Nodos {
 	int data;
-	struct TreeNode* left;
-	struct TreeNode* right;
+	struct Nodos* left;
+	struct Nodos* right;
 };
 
-struct TreeNode* createNode(int value) {
-	struct TreeNode* newNode = (struct TreeNode*)malloc(sizeof(struct TreeNode));
+struct Nodos* createNode(int value) {
+	struct Nodos* newNode = (struct Nodos*)malloc(sizeof(struct Nodos));
 	newNode->data = value;
 	newNode->left = newNode->right = NULL;
 	return newNode;
 }
 
-struct TreeNode* insert(struct TreeNode* root, int value) {
+struct Nodos* insert(struct Nodos* root, int value) {
 	if (root == NULL) {
 		return createNode(value);
 	}
@@ -27,7 +27,7 @@ struct TreeNode* insert(struct TreeNode* root, int value) {
 
 	return root;
 }
-struct TreeNode* search(struct TreeNode* root, int value) {
+struct Nodos* search(struct Nodos* root, int value) {
 	if (root == NULL || root->data == value) {
 		return root;
 	}
@@ -41,7 +41,7 @@ struct TreeNode* search(struct TreeNode* root, int value) {
 	return search(root->right, value);
 }
 
-void inorderTraversal(struct TreeNode* root) {
+void inorderTraversal(struct Nodos* root) {
 	if (root != NULL) {
 		inorderTraversal(root->left);
 		printf("%d ", root->data);
@@ -51,7 +51,7 @@ void inorderTraversal(struct TreeNode* root) {
 
 int main() {
 	int x;
-	struct TreeNode* root = NULL;
+	struct Nodos* root = NULL;
 
 	root = insert(root, 50);
 	insert(root, 30);
@@ -74,7 +74,7 @@ int main() {
 	scanf("%i",&x);
 
 	int searchValue = x;
-	struct TreeNode* result = search(root, searchValue);
+	struct Nodos* result = search(root, searchValue);
 
 	if (result != NULL) {
 		printf("%d encontrado en el árbol.\n", searchValue);
